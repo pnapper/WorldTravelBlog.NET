@@ -1,5 +1,12 @@
 ﻿@model IEnumerable<WorldTravelBlog.Models.Location>
 
+@{
+    ViewData["Title"] = "Location - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+
 <html>
 <head>
     <title>World Travel Blog</title>
@@ -7,15 +14,15 @@
 <body>
     <h2>Location List</h2>
         <h4>@Html.DisplayNameFor(model => model.Name)</h4>
-		<h4>@Html.DisplayNameFor(model => model.Description)</h4>
     <ul>
-        @foreach(var listItem in Model)
+        @foreach(var listLocation in Model)
         {
             <li>
-			    @Html.DisplayFor(modelItem => listItem.Name)
+			    @Html.DisplayFor(modelLocation => listLocation.Name)
                 @Html.ActionLink("Details", "Details", new { id = listLocation.LocationId })
 			</li>
         }
     </ul>
+		<p>@Html.ActionLink("Add new Location", "Create")</p>
 </body>
 </html>

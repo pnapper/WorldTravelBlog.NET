@@ -7,8 +7,8 @@ using WorldTravelBlog.Models;
 
 namespace WorldTravelBlog.Migrations
 {
-    [DbContext(typeof(WorldTravelBlogDbContext))]
-    partial class WorldTravelBlogDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(WorldTravelBlogContext))]
+    partial class WorldTravelBlogContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {

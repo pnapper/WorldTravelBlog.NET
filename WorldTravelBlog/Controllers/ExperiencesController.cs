@@ -9,19 +9,13 @@ using WorldTravelBlog.Models;
 
 namespace WorldTravelBlog.Controllers
 {
-    public class LocationController : Controller
+    public class ExperiencesController : Controller
     {
         // GET: /<controller>/
-        private WorldTravelBlogContext db = new WorldTravelBlogContext(); 
+        private WorldTravelBlogContext db = new WorldTravelBlogContext();
         public IActionResult Index()
         {
-            return View(db.Locations.ToList());
+            return View(db.Experiences.ToList());
         }
-
-		public IActionResult Details(int id)
-		{
-			Location thisLocation = db.Locations.FirstOrDefault(names => names.LocationId == id);
-			return View(thisLocation);
-		}
     }
 }

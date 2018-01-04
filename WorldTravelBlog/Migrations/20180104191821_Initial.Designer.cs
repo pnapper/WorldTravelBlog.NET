@@ -7,7 +7,7 @@ using WorldTravelBlog.Models;
 
 namespace WorldTravelBlog.Migrations
 {
-    [DbContext(typeof(WorldTravelBlogDbContext))]
+    [DbContext(typeof(WorldTravelBlogContext))]
     [Migration("20180104191821_Initial")]
     partial class Initial
     {

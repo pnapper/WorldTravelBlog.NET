@@ -32,7 +32,7 @@ namespace WorldTravelBlog
         {
             services.AddMvc();
 			services.AddEntityFramework()
-				.AddDbContext<WorldTravelBlogDbContext>(options =>
+				.AddDbContext<WorldTravelBlogContext>(options =>
 					options.UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
