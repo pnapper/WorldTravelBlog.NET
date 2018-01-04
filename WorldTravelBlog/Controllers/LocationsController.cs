@@ -29,13 +29,14 @@ namespace WorldTravelBlog.Controllers
 
         public IActionResult Create()
         {
-            ViewBag.LocationId = new SelectList(db.Locations, "LocationId", "Name", "Description"); 
+           
             return View();
         }
 
-        public IActionResult Create (Location location)
+        [HttpPost]
+        public IActionResult Create (Location farts)
         {
-            db.Locations.Add(location);
+            db.Locations.Add(farts);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
