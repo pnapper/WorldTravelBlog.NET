@@ -2,9 +2,9 @@
 
 namespace WorldTravelBlog.Models
 {
-	public class WorldTravelBlogDbContext : DbContext
+	public class WorldTravelBlogContext : DbContext
 	{
-		public WorldTravelBlogDbContext()
+		public WorldTravelBlogContext()
 		{
 		}
 
@@ -19,7 +19,7 @@ namespace WorldTravelBlog.Models
 			options.UseMySql(@"Server=localhost;Port=8889;database=WorldTravelBlog;uid=root;pwd=root;");
 		}
 
-		public WorldTravelBlogDbContext(DbContextOptions<WorldTravelBlogDbContext> options)
+		public WorldTravelBlogContext(DbContextOptions<WorldTravelBlogContext> options)
 			: base(options)
 		{
 		}
