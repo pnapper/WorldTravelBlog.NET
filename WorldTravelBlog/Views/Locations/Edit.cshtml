@@ -2,4 +2,37 @@
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
+    ViewData["Title"] = "Location - Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<hr />
+<hr />
+
+@model WorldTravelBlog.Models.Location
+
+<html>
+  <head>
+    <title>World Travel Blog - Edit</title>
+  </head>
+  <body>
+    <h2>Edit Location</h2>
+    <hr />
+    <h4>Edit this location: @Html.DisplayFor(model => model.Name)
+		                    @Html.DisplayFor(model => model.Description)</h4>
+
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(model => model.LocationId)
+
+		@Html.LabelFor(model => model.Name)
+        @Html.EditorFor(model => model.Name)
+
+        @Html.LabelFor(model => model.Description)
+        @Html.EditorFor(model => model.Description)
+
+        <input type="submit" value="Save" />
+    }
+    <p>@Html.ActionLink("Back to list", "Index")</p>
+
+  </body>
+</html>

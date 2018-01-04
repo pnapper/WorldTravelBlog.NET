@@ -29,16 +29,44 @@ namespace WorldTravelBlog.Controllers
 
         public IActionResult Create()
         {
-           
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create (Location farts)
+        public IActionResult Create (Location name)
         {
-            db.Locations.Add(farts);
+            db.Locations.Add(name);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+		public IActionResult Edit(int id)
+		{
+			var thisLocation = db.Locations.FirstOrDefault(names => names.LocationId == id);
+			return View(thisLocation);
+		}
+
+		[HttpPost]
+		public IActionResult Edit(Location location)
+		{
+			db.Entry(location).State = EntityState.Modified;
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
+
+		public IActionResult Delete(int id)
+		{
+			var thisLocation = db.Locations.FirstOrDefault(names => names.LocationId == id);
+			return View(thisLocation);
+		}
+
+		[HttpPost, ActionName("Delete")]
+		public IActionResult DeleteConfirmed(int id)
+		{
+			var thisLocation = db.Locations.FirstOrDefault(names => names.LocationId == id);
+			db.Locations.Remove(thisLocation);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
     }
 }
