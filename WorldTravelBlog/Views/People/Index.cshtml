@@ -1,5 +1,30 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿@model IEnumerable<WorldTravelBlog.Models.Person>
+
 @{
+    ViewData["Title"] = "Person - List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<hr />
+<hr />
+
+<html>
+<head>
+    <title>World Travel Blog</title>
+</head>
+<body>
+    <h2>Person List</h2>
+        <h4>@Html.DisplayNameFor(model => model.Name)</h4>
+    <ul>
+        @foreach(var listPerson in Model)
+        {
+            <li>
+                @Html.DisplayFor(modelPerson => listPerson.Name)
+                @Html.ActionLink("Details", "Details", new { id = listPerson.PersonId })
+                @Html.ActionLink("Edit", "Edit", new { id = listPerson.PersonId })
+                @Html.ActionLink("Delete", "Delete", new { id = listPerson.PersonId })
+            </li>
+        }
+    </ul>
+        <p>@Html.ActionLink("Add new Person", "Create")</p>
+</body>
+</html>
