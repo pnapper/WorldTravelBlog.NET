@@ -1,0 +1,23 @@
+﻿@model WorldTravelBlog.Models.Experience
+
+@{
+    ViewData["Title"] = "Experience - Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<hr />
+<hr />
+
+<html>
+<head>
+    <title>Experience - Details</title>
+</head>
+<body>
+    <h2>Experience Details</h2>
+    <hr />
+        @Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)
+        @Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)
+		@Html.DisplayNameFor(model => model.Location.Name): @Html.DisplayFor(model => model.Location.Name)
+
+		<p>@Html.ActionLink("Edit", "Edit", new { id = Model.ExperienceId }) | @Html.ActionLink("Back to list", "Index")</p>
+</body>
+</html>
